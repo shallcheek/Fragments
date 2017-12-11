@@ -1,6 +1,8 @@
-package com.chaek.android.fragments;
+package com.chaek.example.fragments;
 
 import android.widget.TextView;
+
+import com.chaek.android.example.R;
 
 /**
  * Auth: Chaek
@@ -19,7 +21,7 @@ public class Fragment1 extends BaseFragment {
     @Override
     public void initView() {
 
-        mTest1 = (TextView) findViewById(R.id.test1);
+        mTest1 = (TextView) findViewById( R.id.test1);
         mTest1.setText(getArguments().getString("title"));
     }
 

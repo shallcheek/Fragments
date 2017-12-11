@@ -1,4 +1,4 @@
-package com.chaek.android.fragments;
+package com.chaek.example.fragments;
 
 import android.content.Context;
 import android.os.Bundle;

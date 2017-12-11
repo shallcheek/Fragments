@@ -1,20 +1,15 @@
 # Fragments
 
- compatible with Android 2.3+.
+ compatible with Android 4.0+.
 
-## Integration
+## Gradle
 
-build.gradle:
-```
-    maven { url "https://jitpack.io" }
- ```
-Gradle:
-``` 
- implementation 'com.github.shallcheek:Fragments:v1.0'
+ 
+```groovy 
+ implementation 'com.chaek.android:fragments:1.0.0'
 ```
 
 ## Usage
-show demo MainActivity
 ```java
             Fragments.with(this)
                      .addToBackStack()

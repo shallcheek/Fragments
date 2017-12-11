@@ -1,4 +1,4 @@
-package com.chaek.android.fragments;
+package com.chaek.example.fragments;
 
 public interface OnMainSwitchListener {
     void switchFragment(int position);

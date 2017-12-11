@@ -1,8 +1,10 @@
-package com.chaek.android.fragments;
+package com.chaek.example.fragments;
 
 import android.content.Context;
 import android.view.View;
 import android.widget.Button;
+
+import com.chaek.android.example.R;
 
 /**
  * Auth: Chaek
@@ -27,7 +29,7 @@ public class MainFragment extends BaseFragment {
 
     @Override
     public int getLayoutViewId() {
-        return R.layout.main_fragment;
+        return  R.layout.main_fragment;
     }
 
     @Override

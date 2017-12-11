@@ -1,7 +1,9 @@
-package com.chaek.android.fragments;
+package com.chaek.example.fragments;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+
+import com.chaek.android.example.R;
 
 import chaek.com.android.Fragments;
 
@@ -10,7 +12,7 @@ public class MainActivity extends AppCompatActivity implements OnMainSwitchListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView( R.layout.activity_main);
         Fragments.with(this).fragment(MainFragment.class).into(R.id.test);
     }
 
