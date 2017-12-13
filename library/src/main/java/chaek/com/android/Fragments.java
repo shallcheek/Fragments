@@ -273,7 +273,7 @@ public class Fragments {
         private Fragment into(int containerViewId, boolean isShow) {
             if (fragment == null && fClass != null) {
                 try {
-                    if (single) {
+                    if (single && isShow) {
                         fragment = getCacheFragment();
                     }
                     if (fragment == null) {
@@ -293,6 +293,14 @@ public class Fragments {
                 throw new NullPointerException("fragment not null ");
             }
 
+            //配置传递数据 如果自带的参数存在
+            if (fragment.getArguments() != null) {
+                getBundle().putAll(fragment.getArguments());
+            }
+            if (bundle != null) {
+                fragment.setArguments(bundle);
+            }
+
             if (!isShow) {
                 return fragment;
             }
@@ -301,14 +309,6 @@ public class Fragments {
             //如果正在显示的fragment与需要显示的fragment一样则不继续执行
             if (c != null && c.equals(fragment)) {
                 return fragment;
-            }
-
-            //配置传递数据 如果自带的参数存在
-            if (fragment.getArguments() != null) {
-                getBundle().putAll(fragment.getArguments());
-            }
-            if (bundle != null) {
-                fragment.setArguments(bundle);
             }
 
             //隐藏前面所有的Fragment
