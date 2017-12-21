@@ -226,6 +226,14 @@ public class Fragments {
         }
 
         /**
+         * 传递参数 float
+         */
+        public Builder putBoolean(String key, boolean value) {
+            getBundle().putBoolean(key, value);
+            return this;
+        }
+
+        /**
          * 传递参数 long
          */
         public Builder putLong(String key, Long value) {
