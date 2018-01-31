@@ -6,7 +6,7 @@
 
  
 ```groovy 
- implementation 'com.chaek.android:fragments:1.0.0'
+ implementation 'com.chaek.android:fragments:1.0.2'
 ```
 
 ## Usage
@@ -16,7 +16,12 @@
                      .putString("title", "item1")
                      .fragment(Fragment1.class/*new Fragment1()*/)
                      .into(R.id.test);
-    
+
+         
+       Fragment f  =  Fragments.get(MainFragment.class)
+                             .putString("title", "title")
+                             .get();
+
 ```
 
 

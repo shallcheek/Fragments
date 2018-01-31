@@ -12,7 +12,9 @@ public class MainActivity extends AppCompatActivity implements OnMainSwitchListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView( R.layout.activity_main);
+        setContentView(R.layout.activity_main);
+
+        MainFragment mainFragment = (MainFragment) Fragments.get(MainFragment.class).putString("title", "title").get();
         Fragments.with(this).fragment(MainFragment.class).into(R.id.test);
     }
 

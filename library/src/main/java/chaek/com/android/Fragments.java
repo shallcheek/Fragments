@@ -12,6 +12,9 @@ import java.io.Serializable;
 import java.util.List;
 
 
+/**
+ * 简单的fragment 加载工具类
+ */
 public class Fragments {
 
     public static Builder with(Context context) {
@@ -20,6 +23,21 @@ public class Fragments {
 
     public static Builder with(Fragment fragment) {
         return new Builder().with(fragment);
+    }
+
+    /**
+     * 单纯的获取一个Fragment实例 使用方法
+     * <pre>
+     * <code>
+     *  Fragment testFragment= Fragments.get(TestFragment.class)
+     *             .putString("title","title")
+     *             .get();
+     * </code></pre>
+     *
+     * @param className
+     */
+    public static Builder get(Class className) {
+        return new Builder().fragment(className);
     }
 
     public static class Builder {
@@ -148,6 +166,7 @@ public class Fragments {
             this.fClass = fClass;
             return this;
         }
+
 
         /**
          * 传递fragment实例方式
@@ -285,7 +304,7 @@ public class Fragments {
                         fragment = getCacheFragment();
                     }
                     if (fragment == null) {
-                        fragment = Fragment.instantiate(context, fClass.getName(), bundle);
+                        fragment = (Fragment) fClass.newInstance();
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -308,7 +327,7 @@ public class Fragments {
             if (bundle != null) {
                 fragment.setArguments(bundle);
             }
-
+            //如果至少单纯的获取Fragment
             if (!isShow) {
                 return fragment;
             }
